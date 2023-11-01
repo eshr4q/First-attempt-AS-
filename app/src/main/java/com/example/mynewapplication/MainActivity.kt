@@ -32,8 +32,8 @@ class CodingShit constructor(age: Int): Person(age){
 }
 
 fun main(args: Array<String>) {
-    val SimplePerson: Person = Person(37)
-    SimplePerson.talk()
+    val simplePerson: Person = Person(37)
+    simplePerson.talk()
 
     var codingShit = CodingShit(age = 57)
     codingShit.talk()
