@@ -10,27 +10,38 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-public final class Person constructor(public val age: Int) {
+public open class Person constructor(public val age: Int) {
 
-    public fun talk() {
+    public open fun talk() {
         val message: String
         message = "I'm $age years old and I'm sick of Android studio."
         println(message)
 
+
+    }
+}
+class CodingShit constructor(age: Int): Person(age){
+    override fun talk() {
+        val message: String
+        message = "I'm a temp and I'm $age."
+        println(message)
+    }
+    fun code() {
+        println("I code arvahe amam.")
     }
 }
 
 fun main(args: Array<String>) {
-    val SimplePerson: Person = Person(27)
+    val SimplePerson: Person = Person(37)
     SimplePerson.talk()
+
+    var codingShit = CodingShit(age = 57)
+    codingShit.talk()
+    codingShit.code()
+
+    codingShit = CodingShit(age = 40)
+    codingShit.talk()
 }
 
 
-//class Name constructor (val age: Int) {
-// fun talk(input: String): String {
-//  val message: String
-//  message= "It's my birthday, I'm $age years old."
-//  println(message)
-//
-// }
-//}
+
